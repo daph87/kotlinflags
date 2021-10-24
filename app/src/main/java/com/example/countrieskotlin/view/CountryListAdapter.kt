@@ -33,14 +33,14 @@ class CountryListAdapter(var countries: ArrayList<Country>) :
 
         private val imageView = view.imageView
         private val countryName = view.name
-        private val countryCapital = view.capital
+//        private val countryCapital = view.capital
         private val progressDrawable = getProgressDrawable(view.context)
 
         fun bind(country: Country) {
             // Bind the Country Name
             countryName.text = country.countryName
             // Bind the Country Capital
-            countryCapital.text = country.capital
+//            countryCapital.text = country.capital
             // Load the Image onto the ImageView
             imageView.loadImage(country.flag, progressDrawable)
         }

@@ -1,17 +1,20 @@
 package com.example.countrieskotlin.model
 
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import com.example.countrieskotlin.di.DaggerApiComponent
+import retrofit2.Response
+import javax.inject.Inject
+
 
 class CountriesService {
 
-    private val BASE_URL = "https://raw.githubusercontent.com"
+@Inject
+lateinit var api :CountriesApi
 
-  fun getCountriesService(): CountriesApi = Retrofit.Builder()
-        .baseUrl(BASE_URL) // URL on which every endpoint will be appended
-        // GSON Converter Factory to parse JSON and construct Objects
-        .addConverterFactory(GsonConverterFactory.create())
-        .build() // Generate the Retrofit instance
-        .create(CountriesApi::class.java) // Create the CountriesApi with the Retrofit Configuration
+init{
+    DaggerApiComponent.create().inject(this)
+}
+  suspend fun getCountriesService(): Response<List<Country>>{
+      return api.getCountries()
+  }
 }
 

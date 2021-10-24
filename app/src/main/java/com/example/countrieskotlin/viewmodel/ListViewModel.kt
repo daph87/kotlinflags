@@ -17,7 +17,7 @@ class ListViewModel : ViewModel() {
     val countryLoadError = MutableLiveData<Boolean?>()
     val loading = MutableLiveData<Boolean>()
 
-    private val countriesService = CountriesService().getCountriesService()
+    private val countriesService = CountriesService()
 
     // Coroutine Job instance to download the data from the API
     private var job: Job? = null
@@ -51,7 +51,7 @@ class ListViewModel : ViewModel() {
         job = CoroutineScope(Dispatchers.Main + exceptionHandler).launch {
             // Get the countries information from the API on the IO Dispatcher (api data for example)
             val response = withContext(Dispatchers.IO) {
-                countriesService.getCountries()
+                countriesService.getCountriesService()
             }
             // Back to the UI thread
 
