@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">CountriesKotlin</string>
     <string name="error_text">An error occurred while loading data</string>
+    <string name="im_in_second_screen">im in second screen</string>
 </resources>

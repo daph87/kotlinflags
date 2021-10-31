@@ -1,21 +1,21 @@
 package com.example.countrieskotlin.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.countrieskotlin.R
+import com.example.countrieskotlin.model.Country
 import com.example.countrieskotlin.viewmodel.ListViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() , CountryClickListener {
 
     lateinit var viewModel: ListViewModel
-    private val countriesAdapter = CountryListAdapter(arrayListOf())
+    private val countriesAdapter = CountryListAdapter(this,arrayListOf(),this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity() {
         }
         observeViewModel()
     }
-
     private fun observeViewModel() {
         viewModel.countries.observe(this, Observer { countries ->
             //checks if countries is not null
@@ -59,5 +58,16 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
+    }
+
+    override fun onClick(data : Country) {
+        val intent = Intent(this, ItemCountryDetails::class.java).apply {
+            putExtra("countryName" , data.countryName)
+            putExtra("countryFlag" , data.flag)
+            putExtra("countryCapital" , data.capital)
+            putExtra("countryRegion" , data.region)
+            putExtra("countryPopulation" , data.population)
+        }
+        startActivity(intent)
     }
 }
