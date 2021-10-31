@@ -1,4 +1,4 @@
-package com.example.countrieskotlin.view
+package com.example.countrieskotlin.view.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,12 +9,14 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.countrieskotlin.R
 import com.example.countrieskotlin.model.Country
+import com.example.countrieskotlin.view.fragments.CountryClickListener
+import com.example.countrieskotlin.view.fragments.CountryListAdapter
 import com.example.countrieskotlin.viewmodel.ListViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() , CountryClickListener {
 
-    lateinit var viewModel: ListViewModel
+    private lateinit var viewModel: ListViewModel
     private val countriesAdapter = CountryListAdapter(this,arrayListOf(),this)
 
     override fun onCreate(savedInstanceState: Bundle?) {

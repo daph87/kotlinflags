@@ -1,4 +1,4 @@
-package com.example.countrieskotlin.view
+package com.example.countrieskotlin.view.fragments
 
 import android.content.Context
 import android.widget.ImageView

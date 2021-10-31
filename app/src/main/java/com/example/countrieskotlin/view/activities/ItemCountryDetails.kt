@@ -1,17 +1,15 @@
-package com.example.countrieskotlin.view
+package com.example.countrieskotlin.view.activities
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
+import android.util.Log
 import android.view.View
-import android.widget.ImageView
+import android.widget.Button
 import android.widget.Toast
-import com.bumptech.glide.util.Util
 import com.example.countrieskotlin.R
+import com.example.countrieskotlin.view.fragments.getProgressDrawable
+import com.example.countrieskotlin.view.fragments.loadImage
 import kotlinx.android.synthetic.main.activity_item_country_details.*
-import kotlinx.android.synthetic.main.activity_item_country_details.view.*
-import kotlinx.android.synthetic.main.item_country.view.*
 
 class ItemCountryDetails() : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +25,14 @@ class ItemCountryDetails() : AppCompatActivity() {
         this.region.text = region
         this.population.text = population
         this.flag.loadImage(flag, getProgressDrawable(this))
+        val button = findViewById<Button>(R.id.fav_button)
+        button.setOnClickListener{
+            view -> addToFav(view)
+        }
 
-
+    }
+    private fun addToFav(view : View){
+        Log.e("test" , view.toString())
+        Toast.makeText(this,"added to favorite" , Toast.LENGTH_SHORT).show()
     }
 }

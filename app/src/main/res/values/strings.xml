@@ -3,4 +3,5 @@
     <string name="error_text">An error occurred while loading data</string>
     <string name="im_in_second_screen">im in second screen</string>
     <string name="flags">Flags</string>
+    <string name="add_to_favorite">Add to favorite</string>
 </resources>

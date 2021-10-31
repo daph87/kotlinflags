@@ -1,4 +1,4 @@
-package com.example.countrieskotlin.view
+package com.example.countrieskotlin.view.fragments
 
 import com.example.countrieskotlin.model.Country
 

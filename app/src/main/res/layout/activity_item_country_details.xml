@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.ItemCountryDetails">
+    tools:context=".view.activities.ItemCountryDetails">
 
     <TextView
         android:id="@+id/name"
@@ -60,13 +60,26 @@
 
     <ImageView
         android:id="@+id/flag"
-        android:layout_width="404dp"
-        android:layout_height="205dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="409dp"
+        android:layout_height="212dp"
         android:layout_weight="1"
         android:padding="@dimen/standard_padding"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/fav_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_to_favorite"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/flag"
+        app:layout_constraintVertical_bias="0.884" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,5 +15,6 @@ data class Country(
     @SerializedName("population")
     val population: String?,
     @SerializedName("region")
-    val region: String?
+    val region: String?,
+    val isFavorite: Boolean = false
 )

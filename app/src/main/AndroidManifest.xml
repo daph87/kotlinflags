@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CountriesKotlin">
         <activity
-            android:name=".view.SplashScreen"
+            android:name=".view.activities.SplashScreen"
             android:exported="true"
             android:theme="@style/Theme.CountriesKotlin.NoActionBar">
             <intent-filter>
@@ -22,10 +22,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.ItemCountryDetails"
-            android:exported="true" />
+            android:name=".view.activities.ItemCountryDetails"
+            android:exported="true"
+            android:label="Show Country Details"
+            android:theme="@style/Theme.CountriesKotlin.NoActionBar"/>
         <activity
-            android:name=".view.MainActivity"
+            android:name=".view.activities.MainActivity"
             android:exported="true">
 
         </activity>
