@@ -22,10 +22,11 @@
             </intent-filter>
         </activity>
         <activity
+            android:parentActivityName=".view.activities.MainActivity"
             android:name=".view.activities.ItemCountryDetails"
             android:exported="true"
-            android:label="Show Country Details"
-            android:theme="@style/Theme.CountriesKotlin.NoActionBar"/>
+            android:label="Country Details"
+            />
         <activity
             android:name=".view.activities.MainActivity"
             android:exported="true">
