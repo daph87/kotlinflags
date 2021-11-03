@@ -1,6 +1,6 @@
 package com.example.countrieskotlin.di
 
-import com.example.countrieskotlin.model.CountriesApi
+import com.example.countrieskotlin.api.CountriesApi
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit

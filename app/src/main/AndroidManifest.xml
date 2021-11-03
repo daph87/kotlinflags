@@ -23,7 +23,7 @@
         </activity>
         <activity
             android:parentActivityName=".view.activities.MainActivity"
-            android:name=".view.activities.ItemCountryDetails"
+            android:name=".view.activities.CountryDetails"
             android:exported="true"
             android:label="Country Details"
             />

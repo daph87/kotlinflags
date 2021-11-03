@@ -1,6 +1,6 @@
 package com.example.countrieskotlin.di
 
-import com.example.countrieskotlin.model.CountriesService
+import com.example.countrieskotlin.api.CountriesService
 import dagger.Component
 
 @Component(modules = [ApiModule::class])

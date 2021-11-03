@@ -1,5 +1,6 @@
-package com.example.countrieskotlin.model
+package com.example.countrieskotlin.api
 
+import com.example.countrieskotlin.model.Country
 import retrofit2.Response
 import retrofit2.http.GET
 

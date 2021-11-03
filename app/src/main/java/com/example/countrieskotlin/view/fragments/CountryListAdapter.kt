@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.countrieskotlin.R
 import com.example.countrieskotlin.model.Country
+import com.example.countrieskotlin.utilities.Util.getProgressDrawable
+import com.example.countrieskotlin.utilities.Util.loadImage
 import kotlinx.android.synthetic.main.item_country.view.*
 
 class CountryListAdapter(

@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.activities.ItemCountryDetails">
+    tools:context=".view.activities.CountryDetails">
 
     <TextView
         android:id="@+id/name"
         android:layout_width="120dp"
         android:layout_height="30dp"
         android:layout_marginBottom="348dp"
+        android:gravity="center"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,6 +25,7 @@
         android:layout_width="120dp"
         android:layout_height="30dp"
         android:layout_marginBottom="348dp"
+        android:gravity="center"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,6 +39,7 @@
         android:layout_width="120dp"
         android:layout_height="30dp"
         android:layout_marginBottom="216dp"
+        android:gravity="center"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,6 +53,7 @@
         android:layout_width="120dp"
         android:layout_height="30dp"
         android:layout_marginTop="100dp"
+        android:gravity="center"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,7 +65,7 @@
     <ImageView
         android:id="@+id/flag"
         android:layout_width="409dp"
-        android:layout_height="212dp"
+        android:layout_height="200dp"
         android:layout_weight="1"
         android:padding="@dimen/standard_padding"
         app:layout_constraintBottom_toBottomOf="parent"
