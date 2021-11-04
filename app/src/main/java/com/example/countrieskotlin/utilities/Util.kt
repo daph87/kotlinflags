@@ -14,7 +14,6 @@ object Util {
             start()
         }
     }
-
     fun ImageView.loadImage(uri: String?, progressDrawable: CircularProgressDrawable) {
         // Glide customization to show an image on loading error
         val options = RequestOptions().placeholder(progressDrawable).error(R.mipmap.ic_launcher_round)

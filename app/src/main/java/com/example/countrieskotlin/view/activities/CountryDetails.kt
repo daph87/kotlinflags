@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import androidx.lifecycle.MutableLiveData
 import com.example.countrieskotlin.R
 import com.example.countrieskotlin.api.CountriesService
 import com.example.countrieskotlin.model.Country
@@ -14,26 +15,30 @@ import kotlinx.android.synthetic.main.activity_item_country_details.*
 
 class CountryDetails() : AppCompatActivity() {
     private var countryService: CountriesService = CountriesService()
+    private lateinit var favCountry: MutableLiveData<Country>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_item_country_details)
         this.name.text = intent.getStringExtra("countryName")
-        //need to change the shared prefrence
-        //----------------------------------
-        //countryService.putSharedPref("afganistan")
-       // Log.e("checking pref",countryService.toString())
-       // countryService.putSharedPref(intent.getStringExtra("countryName").toString())
-       // Log.e("checking pref",countryService.getSharedPref().toString())
+        countryService.initPref(this)
+        countryService.putSharedPref(intent.getStringExtra("countryName").toString())
+        val countryName: String = countryService.getSharedPref().toString()
+        //setCountry(countryName)
         val button = findViewById<Button>(R.id.fav_button)
-        button.setOnClickListener{
-            view -> addToFav(view,ListViewModel().countries.value)
+        button.setOnClickListener { view ->
+            addToFav(view)
         }
 
 
     }
-    private fun addToFav(view: View, temp: List<Country>?){
-        Log.e("test" , temp.toString())
-        Toast.makeText(this,"added to favorite" , Toast.LENGTH_SHORT).show()
+
+    private suspend fun setCountry(countryName: String) {
+        favCountry.value = countryService.getOneCountry(countryName)!!
+    }
+
+    private fun addToFav(view: View) {
+        //Log.e("test", temp.toString())
+        Toast.makeText(this, "added to favorite", Toast.LENGTH_SHORT).show()
     }
 }
